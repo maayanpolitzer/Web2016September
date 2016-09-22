@@ -1,0 +1,15 @@
+a, h2, h6, h5 {
+				background-color: white;
+				color: red;
+			}
+			
+body {
+	background-color:blue;
+}
+
+p {
+	border: 2px solid black;
+	padding-left: 100px;
+	margin-left: 100px;
+	margin-top: 500px;
+}
