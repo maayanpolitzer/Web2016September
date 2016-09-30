@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			
+			//distance(15,90);
+			//product(400000,7);
+			/*
+			var number = quatient(21,3);
+			alert(number * 6);
+			*/
+			
+			alert(remainder(12, 5));
+			
+			function remainder(x,y){
+				if(x < y){
+					return x;
+				}
+				return distance(x, product(quatient(x,y),y));
+			}
+			
+			function quatient(x,y){
+				var counter = 0;
+				var helper = y;
+				while(helper <= x){
+					helper += y;
+					counter++;
+				}
+				return counter;
+			}
+			
+			function product(x, y){
+				var result = 0;
+				var small = x;
+				var large = y;
+				if(x > y){
+					small = y;
+					large = x;
+				}
+				for(var i = 0; i < small; i++){
+					result += large;
+				}
+				return result;
+			}
+			
+			function distance(x, y){
+				var result = 0;
+				var small = x;
+				var large = y;
+				if(x > y){
+					small = y;
+					large = x;
+				}
+				for(var i = small; i < large; i++){
+					result++;
+				}	
+				return result;
+			}
+		
+			function sum(x, y){
+				alert(x + y);
+			}
+			
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

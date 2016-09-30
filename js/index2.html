@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			/*
+				next lesson:
+				1. global vs. local variables.
+				2. arrays.
+				3. create tic tac toe.
+			*/
+			var counter = 1;
+			
+			function changeText(){
+				var p = document.getElementById("paragraph");
+				p.innerHTML = "you clicked " + counter++ + " times.";
+				//p.style.color = "yellow";
+			}
+		</script>
+	</head>
+	<body>
+		<p id="paragraph">hello to all, good night</p>
+		<button onclick="changeText();">click me to change the text</button>
+	</body>
+</html>
