@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div {
+				width:30%;
+				height: 200px;
+				background-color: pink;
+				margin: 1%;
+				float:left;
+				
+			}
+			
+			.clear {
+				clear:both;
+			}
+		</style>
+		<script>
+			function init(){
+				var divs = document.getElementsByTagName("div");
+				for(var i = 0; i < divs.length; i++){
+					divs[i].style.height = divs[i].clientWidth + "px";
+				}
+			}
+			
+			window.onresize = init;
+		</script>
+	</head>
+	<body onload="init();">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div class="clear"></div>
+		<div></div>
+		<div></div>
+		<div class="clear"></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

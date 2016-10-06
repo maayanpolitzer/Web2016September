@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+	/*
+		var car1 = new Object();
+		car1.color = "blue";
+		car1.brand = "bmw";
+		car1.size = 1400;
+		
+		var car2 = new Object();
+		car2.color = "black";
+		car2.brand = "golf";
+		car2.size = 1200;
+		
+		var car3 = {color:"pink",brand:"AUDI",size:2000};
+		
+		alert(car3.brand + "," + car3.color);
+		*/
+		function init(){
+			/*
+			var div = document.getElementById("myDiv");
+			div.innerHTML += "<h1>new title</h1>";
+			div.style.color = "blue";
+			*/
+			var lis = document.getElementsByTagName("li");
+			for(var i = 0; i < lis.length; i++){
+				if(i % 2 == 0){
+					lis[i].style.color = "green";
+				}
+			}
+			
+			
+		}
+	</script>
+</head>
+<body onload="init()">
+	<h1>My title</h1>
+	<ul>
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+	</ul>
+	<div id="myDiv">
+		<p>hi this is a paragraph</p>
+	</div>
+	<!--
+	<script>
+		var div = document.getElementById("myDiv");
+		alert(div.innerHTML);
+	</script>
+	-->
+</body>
+</html>

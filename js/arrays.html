@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			var grades = [];
+			//var names = ["Maayan", "Mark", "Gal", "Avi"];
+			grades.push(80);
+			grades.push(45);
+			grades.push(30);
+			grades.push(90);
+			
+			grades[2] = 100;
+
+			factor(5);
+
+			alert(average());
+
+			function average(){
+				var sum = 0;
+				for(var i = 0; i < grades.length; i++){
+					sum += grades[i];
+				}
+				return sum / grades.length;
+			}
+			
+			function factor(x){
+				for(var i = 0; i < grades.length; i++){
+					if(grades[i] >= 100-x){
+						grades[i] = 100;
+					}else{
+						grades[i] += x;
+					}
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
