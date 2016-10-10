@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			var cardBackPath = "img/back.jpg";
+			var gameLevels = [{rows:3,cols:2}, {rows:4,cols:3}, {rows:6, cols:4}];
+			var counter = 0;
+			var images = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
+			var options = [0,0,1,1,2,2];
+			var secondCardFlip = true;
+			var firstCard;
+			var firstCardIndex;
+			var menuDiv;
+			var rightGuesses = 0;
+			var gameDiv;
+		
+			function balagan(){
+				for(var i = 0; i < options.length; i++){
+					var x = Math.floor((Math.random() * 6));
+					var temp = options[x];
+					options[x] = options[i];
+					options[i] = temp;
+				}
+				alert(options);
+			}
+		
+			function startGame(x){
+				balagan();
+				menuDiv = document.getElementById("menu");
+				menuDiv.style.display = "none";
+				gameDiv = document.getElementById("game");	// mainDiv pointer.
+				for(var i = 0; i < gameLevels[x].rows; i++){
+					var row = document.createElement("div");		// create div for every row.
+					for(var j = 0; j < gameLevels[x].cols; j++){
+						var card = document.createElement("img");	// create <img> tag.
+						card.setAttribute("src", cardBackPath);		// add attribute (src) to img;
+						card.setAttribute("onclick", "cardClick(" + counter + ",this)");
+						counter++;
+						row.appendChild(card);						// insert card into row(img into div).
+					}
+					gameDiv.appendChild(row);					// insert row into mainDiv.
+				}
+			}
+			
+			function cardClick(number, card){
+				if(number != firstCardIndex){
+					//alert(images[options[number]]);
+					secondCardFlip = !secondCardFlip;
+					card.setAttribute("src", images[options[number]]);
+					if(secondCardFlip){		// shortcut to (secondCardFlip == true)
+						if(checkCards(number)){
+							 //alert("cards the same.");
+							 card.setAttribute("onclick", "");
+							 firstCard.setAttribute("onclick", null);
+							 rightGuesses++;
+							 if(rightGuesses == 3){
+								endGame();
+							 }
+						}else{
+							 //alert("cards are different.");
+							 setTimeout(function(){
+								card.setAttribute("src", cardBackPath);
+								firstCard.setAttribute("src", cardBackPath);
+							 }, 2000);
+						}
+						firstCardIndex = -1;
+					}else{
+						firstCardIndex = number;
+						firstCard = card;
+					}
+				}
+			}
+			
+			function endGame(){
+				//alert("END!");
+				menuDiv.style.display = "inline";
+				gameDiv.innerHTML = "";
+				counter = 0;
+				rightGuesses = 0;
+
+			}
+			
+			function checkCards(secondCardIndex){
+				return options[firstCardIndex] == options[secondCardIndex];
+				/*	UGLY!!!
+				if(options[firstCardIndex] == options[secondCardIndex]){
+					return true;
+				}else{
+					return false;
+				}
+				*/
+			}
+			
+		</script>
+		<style>
+			img {
+				
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+			<button onclick="startGame(0);">easy</button>
+			<button onclick="startGame(1);">medium</button>
+			<button onclick="startGame(2);">hard</button>
+		</div>
+		<div id="game">
+		
+		</div>
+	</body>
+</html>
