@@ -6,26 +6,53 @@
 			var cardBackPath = "img/back.jpg";
 			var gameLevels = [{rows:3,cols:2}, {rows:4,cols:3}, {rows:6, cols:4}];
 			var counter = 0;
-			var images = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
-			var options = [0,0,1,1,2,2];
+			var images;
+			var options;
 			var secondCardFlip = true;
 			var firstCard;
 			var firstCardIndex;
 			var menuDiv;
 			var rightGuesses = 0;
 			var gameDiv;
+			var totalCards;
+			var lockScreen;
+			
+			function addImages(){
+				images = [];
+				var numOfImages = totalCards / 2;
+				var imgStart = "img/";
+				var imgEnd = ".jpg";
+				for (var i = 1; i <= numOfImages; i++){
+					var img = imgStart + i + imgEnd + "";
+					//alert(img);
+					images.push(img);
+				}
+			}
+			
+			function addOptions(){
+				options = [];
+				var numOfOptions = totalCards / 2;
+				for(var i = 0; i < numOfOptions; i++){
+					options.push(i);
+					options.push(i);
+				}
+				//alert(options);
+			}
 		
 			function balagan(){
 				for(var i = 0; i < options.length; i++){
-					var x = Math.floor((Math.random() * 6));
+					var x = Math.floor(Math.random() * totalCards);
 					var temp = options[x];
 					options[x] = options[i];
 					options[i] = temp;
 				}
-				alert(options);
+				//alert(options);
 			}
 		
 			function startGame(x){
+				totalCards = gameLevels[x].rows * gameLevels[x].cols;
+				addImages();
+				addOptions();
 				balagan();
 				menuDiv = document.getElementById("menu");
 				menuDiv.style.display = "none";
@@ -47,7 +74,8 @@
 			}
 			
 			function cardClick(number, card){
-				if(number != firstCardIndex){
+				//alert(number);
+				if(number != firstCardIndex && !lockScreen){
 					//alert(images[options[number]]);
 					secondCardFlip = !secondCardFlip;
 					/*
@@ -58,6 +86,7 @@
 					}
 					*/
 					
+					
 					card.setAttribute("src", images[options[number]]);
 					if(secondCardFlip){		// shortcut to (secondCardFlip == true)
 						if(checkCards(number)){	// same as => if(checkCards(number) == true)
@@ -65,15 +94,18 @@
 							 card.setAttribute("onclick", "");		// cancel the onclick for the second card.
 							 firstCard.setAttribute("onclick", "");	// cancel the onclick for the first card.
 							 rightGuesses++;
-							 if(rightGuesses == 3){
+							 if(rightGuesses == totalCards / 2){
 								endGame();
 							 }
 						}else{
 							 //alert("cards are different.");
+							 lockScreen = true;
 							 setTimeout(function(){
 								card.setAttribute("src", cardBackPath);
 								firstCard.setAttribute("src", cardBackPath);
+								lockScreen = false;
 							 }, 2000);
+							 
 						}
 						firstCardIndex = -1;
 					}else{
@@ -108,7 +140,6 @@
 		</script>
 		<style>
 			img {
-				
 				width: 150px;
 			}
 		</style>
