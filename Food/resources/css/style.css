@@ -1,0 +1,156 @@
+/* initialise the default css for all browsers! */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;	/* auto adjust the size with the padding.*/
+}
+
+body {
+	background-color: #fff;
+	color: #555;
+	font-size: 20px;
+}
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+/* -----------------------------------*/
+/* header */
+/* -----------------------------------*/
+
+header {
+	background-image: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url(../img/background.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 100vh;	/* 100% view (screen) height */
+}
+
+.logo {
+	height: 100px;
+	width: auto;
+	float: left;
+	margin-top: 20px;
+}
+
+.logo-small {
+	display: none;
+}
+
+.main-nav {
+	float: right;
+	list-style: none;
+	margin-top: 55px;
+}
+
+.main-nav li {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.main-nav li a:link,		/* link - regular link */
+.main-nav li a:visited {
+	padding: 8px 0;
+	color: #fff;
+	text-decoration: none;	
+	text-transform: uppercase;
+	font-size: 90%;
+	border-bottom: 2px solid transparent;
+	transition: border-bottom 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+	border-bottom: 2px solid #e67e22;
+}
+
+.main-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 240%;
+	word-spacing: 3px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.btn:link, 
+.btn:visited {
+	display: inline-block;
+	padding: 10px 30px;
+	text-decoration: none;
+	border-radius: 200px;
+	transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.btn:hover, 
+.btn:active {
+	background-color: #cf6d17;
+}
+
+.btn-full:link,
+.btn-full:visited {
+	background-color: #e67e22;
+	border: 1px solid #e67e22;
+	color: #fff;
+	margin-right: 15px;
+}
+
+.btn-full:hover,
+.btn-full:active {
+	border: 1px solid #cf6d17;
+	background-color: #cf6d17;
+	color: #fff;
+}
+
+.btn-empty:link,
+.btn-empty:visited {
+	border: 1px solid #e67e22;
+	color: #e67e22;
+}
+
+.btn-empty:hover,
+.btn-empty:active {
+	border: 1px solid #cf6d17;
+	color: #fff;
+}
+
+/* -----------------------------------*/
+/* about */
+/* -----------------------------------*/
+
+.section-about {
+	background-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
