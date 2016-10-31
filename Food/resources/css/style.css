@@ -126,13 +126,88 @@ h1 {
 	color: #fff;
 }
 
+/* sticky nav */
+
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(255,255,255,0.9);
+	z-index: 9999;
+	box-shadow: 0 2px 2px #efefef;
+}
+
+.sticky .main-nav {
+	margin-top: 15px;
+}
+
+.sticky .logo {
+	display: none;
+}
+
+.sticky .logo-small {
+	display:block;
+	height: 50px;
+	width: auto;
+	float: left;
+	margin: 5px 0;
+	
+}
+
+.sticky li a:link,
+.sticky li a:visited {
+	padding: 4px 0;
+	color: #555;
+}
+
 /* -----------------------------------*/
 /* about */
 /* -----------------------------------*/
 
 .section-about {
-	background-color: yellow;
+	margin-bottom:30px;
+	padding-top: 80px;
 }
+
+.main-about {
+	margin-bottom: 30px;
+}
+
+.big-icon {
+	font-size: 400%;
+	text-align: center;
+	display: block;
+	margin-bottom:10px;
+	color: #e67e22;
+}
+
+h2 {
+	font-size: 180%;
+	word-spacing: 2px;
+	text-align: center;
+	margin-bottom: 30px;
+	letter-spacing: 1px;
+}
+
+h2:after {
+	content: " ";
+	display: block;
+	height: 2px;
+	width: 100px;
+	margin: 30px auto 0 auto;
+	background-color: #e67e22;
+}
+
+.col h3 {
+	text-align: center;
+	font-size: 110%;
+	margin-bottom: 15px;
+}
+
+
+
+
 
 
 

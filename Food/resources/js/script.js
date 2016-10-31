@@ -1,3 +1,43 @@
+
+
+$(document).ready(function(){
+	
+	// displaying/hiding sticky navigation.
+	$("#about").waypoint(function(direction){
+		if(direction == "down"){
+			$("nav").addClass("sticky");
+		}else{
+			$("nav").removeClass("sticky");
+		}
+	});
+	
+   // clicking on menu items scrolls to the right sections.
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  // animate the views...
+  $("#fade-in-1").waypoint(function(direction){
+	  if(direction == "down"){	  
+		  $("#fade-in-1").removeClass(" animated fadeOutDown").addClass("animated fadeInUp");
+	  }else{
+		  $("#fade-in-1").removeClass("animated fadeInUp").addClass("animated fadeOutDown");
+	  } 
+  },{
+	  offset: "70%"
+  });
+	
+});
+
 /*$(document).ready(wow());
 
 function wow(){
@@ -9,15 +49,6 @@ $(function(){
 	alert("wiw");
 });
 */
-
-
-$(document).ready(function(){
-	
-	
-	
-	
-});
-
 
 
 
