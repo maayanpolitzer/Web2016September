@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!--
+			browser support:
+			div {
+				-webkit-border-radius: 20px;	// android/chrome/iOS/safari.
+				-moz-border-radius: 20px;		// firefox.
+				-ms-border-radius: 20px; 		// internet explorer.
+				-o-border-radius: 20px;			// opera.
+				border-radius: 20px;
+			}
+			
+			1. use brackets as your editor.
+			2. download plugin "Auto prefixer".
+			3. select all your css file (ctrl+a/cmd+a);
+			4. edit -> Auto prefix selection.
+			
+		-->
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="vendors/css/responsive-grid.css">
 		<link rel="stylesheet" href="vendors/css/ionicons.min.css">
 		<link rel="stylesheet" href="vendors/css/animate.css">
+		<link rel="stylesheet" href="vendors/css/lightbox.css">
 		<link rel="stylesheet" href="resources/css/style.css">
+		<link rel="stylesheet" href="resources/css/queries.css">
 		<title>Food site</title>
 	</head>
 	<body>
@@ -17,10 +36,11 @@
 					<ul class="main-nav">
 						<li><a href="#about">About</a></li>
 						<li><a href="#">Menu</a></li>
-						<li><a href="#">Pictures</a></li>
+						<li><a href="#gallery">Pictures</a></li>
 						<li><a href="#">Events</a></li>
 						<li><a href="#">Contact us</a></li>
 					</ul>
+					<a class="mobile-nav-icon"><i class="ion-navicon-round"></i></a>
 				</div>
 			</nav>
 			<div class="main-text">
@@ -69,39 +89,80 @@
 				<div style="clear:both;"></div>
 			</div>
 		</section>
-		<section>
-			<div class="col span_1_of_4">
-					<i class="ion-happy big-icon"></i>
-					<h3>The chef...</h3>
-					<p>
-						It is a long established fact that a reader will be distrable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-					</p>
-				</div>
-				<div class="col span_1_of_4">
-					<i class="ion-pizza big-icon"></i>
-					<h3>The food...</h3>
-					<p>
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-					</p>
-				</div>
-				<div class="col span_1_of_4">
-					<i class="ion-earth big-icon"></i>
-					<h3>The atmosphere...</h3>
-					<p>
-						It is a long  content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-					</p>
-				</div>
-				<div class="col span_1_of_4">
-					<i class="ion-eye big-icon"></i>
-					<h3>The view...</h3>
-					<p>
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-					</p>
-				</div>
-				<div style="clear:both;"></div>
+		
+		<section class="section-gallery" id="gallery">
+			<ul class="gallery-list">
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/1.jpg" data-lightbox="pic">
+							<img src="resources/img/1.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/2.jpg" data-lightbox="pic">
+							<img src="resources/img/2.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/3.jpg" data-lightbox="pic">
+							<img src="resources/img/3.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/4.jpg" data-lightbox="pic">
+							<img src="resources/img/4.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/5.jpg" data-lightbox="pic">
+							<img src="resources/img/5.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/6.jpg" data-lightbox="pic">
+							<img src="resources/img/6.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/7.jpg" data-lightbox="pic">
+							<img src="resources/img/7.jpg"/>
+						</a>
+					</figure>
+				</li>
+				<li>
+					<figure class="gallery-image">
+						<a href="resources/img/8.jpg" data-lightbox="pic">
+							<img src="resources/img/8.jpg"/>
+						</a>
+					</figure>
+				</li>
+			</ul>
 		</section>
+		
 		<script src="vendors/js/jquery-3.1.1.min.js"></script>
 		<script src="vendors/js/jquery.waypoints.min.js"></script>
+		<script src="vendors/js/lightbox.js"></script>
+		<script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>	
+		<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+		<!--
+			respond - make older browsers activate @media queries.
+			html5shiv - make old browsers style html5 elements.
+			selectivizr - helps us style css special things (:active, :visited, :first-child) on old browsers.
+		-->
 		<script src="resources/js/script.js"></script>
+		
 	</body>
 </html>

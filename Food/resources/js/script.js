@@ -15,11 +15,13 @@ $(document).ready(function(){
   $('a[href*="#"]:not([href="#"])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
+	  
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 1000);
+		mobileNavClick();
         return false;
       }
     }
@@ -35,8 +37,24 @@ $(document).ready(function(){
   },{
 	  offset: "70%"
   });
+  
+  
+  // showing/hiding mobile nav icon and menu.
+  $(".mobile-nav-icon").click(mobileNavClick);
 	
 });
+
+function mobileNavClick(){
+	$(".main-nav").slideToggle();
+	var icon = $(".mobile-nav-icon i");
+	if(icon.hasClass("ion-navicon-round")){
+		icon.removeClass("ion-navicon-round");
+		icon.addClass("ion-close-round");
+	}else{
+		icon.removeClass("ion-close-round");
+		icon.addClass("ion-navicon-round");  
+	}
+}
 
 /*$(document).ready(wow());
 
