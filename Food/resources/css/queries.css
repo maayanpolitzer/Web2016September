@@ -10,6 +10,8 @@
 		padding: 0 2%;
 	}
 	
+	
+	
 }
 
 /* small tablets to large tablets.*/
@@ -22,9 +24,17 @@
 		padding: 60px 0;
 	}
 	
+	
+	
 	.main-about {
 		width: 80%;
 		margin-left: 10%;
+	}
+}
+
+@media only screen and (min-width:768px) {
+	.main-nav {
+		display:inline-block;
 	}
 }
 

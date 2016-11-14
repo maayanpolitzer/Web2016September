@@ -88,7 +88,7 @@ h1 {
 .btn:link, 
 .btn:visited {
 	display: inline-block;
-	padding: 10px 30px;
+	padding: 10px 30px;	
 	text-decoration: none;
 	border-radius: 200px;
 	transition: background-color 0.3s, border 0.3s, color 0.3s;
@@ -252,7 +252,130 @@ h2:after {
 	opacity: 1;
 }
 
+/* -----------------------------------*/
+/* contact */
+/* -----------------------------------*/
 
+.form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+	width:100%;
+	padding: 7px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+}
+
+textarea {
+	height: 100px;
+}
+
+.map-box {
+	width: 100%;
+	height: 500px;
+	position: relative;
+}
+
+.map {
+	width: 100%;
+	height: 500px;
+	z-index: 0;
+	position: relative;
+}
+
+.form-box {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 500px;
+	padding: 20px 10px 0 10px;
+	background-color: rgba(255, 255, 255, 0.8);
+	width: 500px;
+}
+
+/* -----------------------------------*/
+/* footer */
+/* -----------------------------------*/
+
+footer {
+	background-color: #333;
+	padding: 60px;
+}
+
+.footer-nav {
+	list-style:none;
+	float: left;
+}
+
+.social-links {
+	list-style: none;
+	float: right;
+}
+
+.footer-nav li,
+.social-links li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+	margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+	text-decoration: none;
+	color: #888;
+	transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+	color: #444;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+	font-size: 170%;
+	
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+	transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+	color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+	color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+	color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+	color: #517fa4;
+}
+
+footer p{
+	color: #888;
+	text-align:center;
+	margin-top: 30px;
+}
 
 
 

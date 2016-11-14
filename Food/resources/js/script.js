@@ -21,7 +21,7 @@ $(document).ready(function(){
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 1000);
-		mobileNavClick();
+		//mobileNavClick();
         return false;
       }
     }
@@ -42,6 +42,50 @@ $(document).ready(function(){
   // showing/hiding mobile nav icon and menu.
   $(".mobile-nav-icon").click(mobileNavClick);
 	
+	
+	// maps:
+	var map = new GMaps({
+		div: '.map',
+		lat: 32.0870809,
+		lng: 34.7884872,
+		zoom: 15
+	});
+	
+	map.addMarker({
+		lat: 32.0870809,
+		lng: 34.7884872,
+		title: "our restaurant",
+		infoWindow: {
+			content: "<br/>Food place<br/>"
+		}
+	});
+	
+	navigator.geolocation.getCurrentPosition(function(position) {
+		map.addMarker({
+			lat: position.coords.latitude,
+			lng: position.coords.longitude,
+			title: "You",
+			infoWindow: {
+				content: "<br/>Your place<br/>"
+			}
+		});
+	});
+	/*
+	function getLocation() {
+		if (navigator.geolocation) {
+			alert(navigator.geolocation.getCurrentPosition(showPosition));
+		} else {
+			alert("Geolocation is not supported by this browser.");
+		}
+}
+	function showPosition(position) {
+		alert("Latitude: " + position.coords.latitude +
+		"Longitude: " + position.coords.longitude);
+	}
+	
+	getLocation();
+	*/
+	
 });
 
 function mobileNavClick(){
@@ -54,19 +98,8 @@ function mobileNavClick(){
 		icon.removeClass("ion-close-round");
 		icon.addClass("ion-navicon-round");  
 	}
+	
 }
-
-/*$(document).ready(wow());
-
-function wow(){
-	alert("wow");
-}
-*/
-/*
-$(function(){
-	alert("wiw");
-});
-*/
 
 
 
