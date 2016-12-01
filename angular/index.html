@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>sports center</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	</head>
+	<body ng-app="sportsApp">
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Sport center</a>
+				</div>
+			</div>
+		</nav>
+		<div ng-controller="dataController">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+					<div class="input-group">
+						<div class="input-group-addon">Sport filter</div>
+						<select class="form-control" ng-model="sportType">
+							<option value="football">Football</option>
+							<option value="soccer">Soccer</option>
+							<option value="basketball">Basket ball</option>
+							<option value="tennis">Tennis</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col-md-4 col-sm-6" ng-repeat="x in games | filter:sportType">
+					<div class="thumbnail">
+						<div class="caption">
+							{{x.title}}
+						</div>
+						<img src="images/{{x.image}}"/>
+						<div class="caption">
+							<p><strong>{{x.teams.home}} vs. {{x.teams.away}}</strong></p>
+							<p><i class="glyphicon glyphicon-tag"></i>   {{x.price | currency}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<script src="app.js"></script>
+		<script src="js/mainController.js"></script>
+	</body>
+</html>
